@@ -59,5 +59,117 @@ Delete from account_table
 where account_id =202;
 select * from account_table;
 
+-- Que 1
+Select Account_id, account_type, balance from account_table;
 
+-- Que2
+Select * from account_table
+where account_type = 'savings';
 
+-- que 3
+select * from account_table
+where balance >25000 and account_type ='savings'
+
+-- Que 4
+Select * from transaction_table
+where amount >=500 and amount <=20000;
+
+Select * from transaction_table
+where amount between 550 and 20000;
+
+Select * from Transaction_table
+where account_id between 202 and 204;
+
+-- Que 5
+select * from customer
+where customer between 101 and 104;
+
+Select *from customer 
+where customer_id in (101,102,103,104);
+
+select * from customer
+where customer_id =101 or customer_id=102 or customer_id=103 or customer_id =104;
+
+-- Que 6
+select * from Account_table
+where account_type ='current';
+
+-- Que7
+Select * from account_table
+Where balance < 15000;
+
+-- Que 8
+select * from transaction_table
+where amount between 1000 and 10000;
+
+-- Que 9
+Select * from customer 
+where customer_id in (104,105);
+
+-- retrieve customer records for customer_id from 102 and 105
+-- find accounts with balance between 500 to 5000
+
+Select * from customer 
+where customer_id in (102,105);
+
+select * from transaction_table
+where amount between 500 and 5000;
+
+-- 1. fetch loan record whose interest is greter than 9 and loan amount greater than 50000
+select * from loans where intrest_rate >9 and Loan_amount>50000;
+
+-- 2. fetch branch record where branch address is shivaji nagar pune
+Select * from branches where branch_adress ='shivajinagar, Pune';
+
+-- 3.find accounts with balance between 500 to 5000
+Select * from Account_table where balance between 500 and 5000;
+
+-- fetch the records where balance is less than 25000 and account type is savings.
+Select * from account_table where balance >25000 and account_type ='savings';
+
+-- Retrieve all records where  Interest Rate less than 8.50
+select * from loans where intrest_rate <8.5;
+
+-- Display customers born after 1 January 1998
+Select * from customer where date_of_birth > '1998-01-01';
+
+-- Display branches whose Branch_id is between 2 and 4.
+Select * from branches where branch_id in (2,4);
+
+-- Display only the branch name and branch phone number of all branches.
+Select branch_name, branch_phone from branches;
+
+--  fetch customer records with limit 2 offset 1
+Select *from customer
+limit 2 offset 1;
+
+-- Retrieve all Deposit Transaction_Type 
+Select * from transaction_table 
+where transaction_type ='deposit';
+
+--  skip first 2 transaction and select next 3 transaction
+Select *from transaction_table
+limit 2 offset 3;
+
+-- display amount from transaction which amount is greater than 5000
+select * from transaction_table
+where amount >5000;
+
+-- find account which account type is saving
+Select * from account_table
+where account_type ='savings';
+
+-- Fetch TransactionDate between 11 ro 13
+Select * from transaction_table 
+where date in (11,13);
+
+-- display branches in branchId 1 and 4
+Select * from branches where branch_id in(1,4);
+
+-- fetch the customer records whose customer name is rahul otherwise sneha
+Select * from customer
+where first_name ="rahul" OR first_name ="Sneha";
+
+-- fetch the transactions record whose transactin ammount is greater than 3000 and transaction type is deposit 
+Select * from transaction_table
+where amount> 3000 and transaction_type= 'deposit';
